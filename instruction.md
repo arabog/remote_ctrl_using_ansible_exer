@@ -39,3 +39,26 @@ res.writeHead(200);
 res.end("Hello world!");
 });
 server.listen(3000);
+
+Add a new task file - roles/setup/tasks/main.yml. This task file should contain instructions to:
+
+update apt packages
+upgrade packages
+install dependencies, such as NodeJS and NPM
+install pm2
+create a ~/web directory
+copy index test page from files/index.js to ~/web/index.js
+Start the weeb server using the command pm2 start ~/web/index.js -f
+Refer to the manual steps from this tutorial. As a hint, the file should start by updating and upgrading the packages in the Ubuntu server like this:
+
+---
+- name: "update apt packages."
+  become: yes
+  apt:
+    update_cache: yes
+
+- name: "upgrade packages"
+  become: tyes
+  apt:
+    upgrade: yes
+
