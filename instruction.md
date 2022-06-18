@@ -65,4 +65,7 @@ Refer to the manual steps from this tutorial. As a hint, the file should start b
 Now let's run the Playbook using your inventory file and udacity.pem file:
 # Assuming the udacity.pem and inventory files are present in the current directory
 
-ansible-playbook main-remote.yml -i inventory --private-key udacity.pem
+sudo ansible-playbook main-remote.yml -i inventory --private-key udacity.pem
+
+Accessing the EC2 host at its public IP:3000
+in d browser
